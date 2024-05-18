@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/dependency/jquery.min.js"></script>
+    <script src="/js/dependency/angular_lib/angular.min.js"></script>
+    <script src="/js/app/apps/ums.module.js"></script>
+    <script src="/js/app/controllers/index.controller.js"></script>
+</head>
+<body ng-app="umsApp" ng-controller="umsAppController">
+    <header>
+        <h1> {{appTitle}} </h1>
+        <nav>
+            <ul>
+                <li ng-repeat="link in links"><a href="{{link.href}}">{{link.content}}</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main onclick="fun()" id="container" >{{records}}</main>
+
+    <script src="/js/index.js" type="module" ></script>
+</body>
+<script>
+    let element = document.getElementById("container");
+    element.addEventListener("click", fun);
+    function fun(){
+        
+    }
+</script>
+</html>
+
+

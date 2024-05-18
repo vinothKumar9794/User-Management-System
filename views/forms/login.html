@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/dependency/angular_lib/angular.min.js"></script>
+    <script src="/js/app/apps/login.module.js"></script>
+    <script src="/js/app/services/UserInterface.service.js" type="module"></script>
+    <script src="/js/app/services/Validation.service.js" type="module"></script>
+    <script src="/js/app/controllers/login.controller.js"></script>
+</head>
+
+<body ng-app="loginApp" ng-controller="loginController">
+    <form action="/ums/v1/home" method="POST">
+        <h1>Login</h1>
+
+        <div class="input-group" ng-repeat="config in inputFields">
+            <input
+             type="{{config.type}}"
+             name="{{config.name}}" 
+             placeholder="{{config.placeholder}}"
+             ng-blur="check($event)"
+             >
+            <img src="{{config.imgPath1}}" alt="icon">
+            <img 
+            ng-if="$last" 
+            src="{{config.imgPath2}}" 
+            alt="icon" 
+            class="eye-icon"
+            ng-click="setIcon($event, '/images/icons/eye-close-icon.png', '/images/icons/eye-open-icon.png')">
+            <p></p>
+        </div>
+
+        <button>Login</button>
+        <a href="/ums/v1/signUp">Don't have an account ? Sign up</a>
+    </form>
+    <script src="/js/login.js" type="module"></script>
+</body>
+
+</html>

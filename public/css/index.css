@@ -1,0 +1,136 @@
+* {
+    color: beige;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/007/718/309/non_2x/minimalist-dark-gradient-wave-background-simple-design-for-your-website-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.040);
+    }
+
+
+header {
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    
+}
+
+header > h1 {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 550;
+    font-size: 22px;
+    text-transform: capitalize;
+    line-height: 60px;
+    margin-left: 5%;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+header > nav {
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+    top : 50%;
+    transform: translateY(-50%);
+}
+
+header > nav > ul > li {
+    display: inline;
+    list-style-type: none;
+    margin-left: 40px;
+}
+
+header > nav a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 550;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+
+header > nav a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    transition: 300ms;
+}
+
+#container{
+    position: absolute;
+    top : 60%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    height: 580px;
+}
+#container > table{
+    margin-top: 20px;
+}
+#container > th,td {
+    border: 2px solid rgba(165, 140, 140, 0.959);
+    border-collapse: collapse;
+    font-family: var(--font-family);
+    font-weight: 550;
+    border-radius: 5px;
+}
+
+
+
+#container > table th{
+    background-color: black;
+    color : white;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-weight: 550;
+}
+
+#container > table th,td{
+    padding: 10px;
+    color: bisque;
+}
+
+#container > table td:nth-child(5) > button {
+    border : none;
+    padding :5px 10px;
+    background-color: green;
+    border-radius: 5px;
+    color : white;
+    font-family: var(--font-family);
+    font-weight: 550;
+}
+
+#container > table td:nth-child(6) > button {
+    border : none;
+    padding :5px 10px;
+    background-color: red;
+    border-radius: 5px;
+    color : white;
+    font-family: var(--font-family);
+    font-weight: 550;
+}
+
+
+#container > table tr:hover{
+    background-color: rgba(105, 104, 104, 0.945);
+    transition: 100ms;
+}
+
+
+#container > h1{
+    font-family: var(--font-family);
+    font-weight: 550;
+    font-size: 16px;
+}
+

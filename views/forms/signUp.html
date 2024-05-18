@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/css/signUp.css">
+    <script src="/js/dependency/angular_lib/angular.min.js"></script>
+    <script src="/js/app/apps/signUp.module.js"></script>
+    <script src="/js/app/services/UserInterface.service.js" type="module"></script>
+    <script src="/js/app/services/Validation.service.js" type="module"></script>
+    <script src="/js/app/controllers/signUp.controller.js"></script>
+</head>
+
+<body ng-app="signUpApp" ng-controller="signUpController">
+    <form action="/ums/v1/users" method="POST">
+        <h1>SignUp</h1>
+
+        <div class="input-group" ng-repeat="config in textFields">
+            <input 
+                type="text" 
+                name="{{config.name}}" 
+                placeholder="{{config.placeholder}}" 
+                ng-blur="check($event)"
+            >
+            <img src="{{config.imgPath}}" alt="icon">
+            <p></p>
+        </div>
+
+        <div class="input-group" ng-repeat="config in passwordFields">
+            <input 
+                type="password" 
+                name="{{config.name}}" 
+                placeholder="{{config.placeholder}}"
+                ng-blur="check($event)"
+            >
+            <img src="{{config.imgPath1}}" alt="icon">
+            <img 
+                src="{{config.imgPath2}}" 
+                alt="icon" 
+                class="eye-icon"
+                ng-click="setIcon($event, '/images/icons/eye-close-icon.png', '/images/icons/eye-open-icon.png')"
+            >
+            <p></p>
+        </div>
+        
+        <button ng-click="submit($event)">SignUp</button>
+
+        <a href="/ums/v1/login">Already have an account ? Login</a>
+    </form>
+</body>
+
+</html>
